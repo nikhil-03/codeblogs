@@ -18,7 +18,11 @@ const level4routes = require('./api/routers/level4s');
 
 
 // mongoose.connect("mongodb+srv://admin-nikhil:NikPra-0806@cluster0-ijmsp.mongodb.net/todolistDB", {useNewUrlParser: true,, useUnifiedTopology: true});
-mongoose.connect(process.env.DATABSE, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASE,{ useNewUrlParser: true });
+mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.connection.on('error', (err) => {
+  console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+});
 app.use(morgan('dev'));
 app.use( '/upload', express.static('upload'));
 app.use(bodyparser.urlencoded({extended:false}));
