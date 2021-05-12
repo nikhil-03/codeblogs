@@ -1,0 +1,169 @@
+.part1
+{
+    padding: 2% 0 3% 0 ;
+   background-color: #393e46;
+   font-family: 'Montserrat', sans-serif;
+   color: white;
+   text-align: center;
+}
+img
+{
+    border-radius: 50%;
+}
+.description-content
+{
+    margin: 1% 20% 1% 20%;
+    padding: 1% 1%;
+    background-color: #687980;
+    border-radius: 25px;
+}
+.part2
+{
+    padding: 2% 0 2% 0;
+    font-family: 'Montserrat', sans-serif; 
+   background-color : #d8e3e7;
+   color: white;
+   text-align: center;
+}
+.level1
+{
+    
+    background-color: #4aa96c;
+    border-radius: 25px;
+    margin: 0% 40%;
+    padding: 2% 2%;
+}
+.level1-extension
+{
+    display: none;
+    background-color: #687980;
+    border-radius: 25px;
+    margin: 1% 20% 1% 20%;
+    padding: 1% 1%;
+}
+.level1:hover + .level1-extension
+{
+    display: block;
+    padding: 2% 2%;
+   
+}
+.level2
+{
+    background-color: #ffd56b;
+    border-radius: 25px;
+    margin: 1% 40%;
+    padding: 2% 2%;
+}
+.level2-extension
+{
+    display: none;
+    background-color: #687980;
+    border-radius: 25px;
+    margin: 1% 20% 1% 20%;
+    padding: 1% 1%;
+}
+.level2:hover + .level2-extension
+{
+    display: block;
+    padding: 2% 2%;
+   
+}
+.level3
+{
+    background-color: #f55c47;
+    border-radius: 25px;
+    margin: 1% 40%;
+    padding: 2% 2%;
+}
+.level3-extension
+{
+    display: none;
+    background-color: #687980;
+    border-radius: 25px;
+    margin: 1% 20% 1% 20%;
+    padding: 2% 2%;
+}
+.level3:hover + .level3-extension
+{
+    display: block;
+    padding: 2% 2%;
+    transition-delay: 1s;
+}
+.level4
+{
+    background-color: #21094e;
+    border-radius: 25px;
+    margin: 1% 40%;
+    padding: 2% 2%;
+}
+.level4-extension
+{
+    display: none;
+    background-color: #687980;
+    border-radius: 25px;
+    margin: 1% 20% 1% 20%;
+    padding: 1% 1%;
+}
+.level4:hover + .level4-extension
+{
+    display: block;
+    padding: 2% 2%;
+   
+}
+/*//////////////////above only index page////////////*/
+a{
+    color: white;
+}
+a:hover
+{
+    color: white;
+    text-decoration: solid;
+    text-shadow: black;
+}
+
+/*//////////////////////////////////////////*/
+footer{
+    padding: 2% 0 3% 0 ;
+    background-color: #393e46;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.social-icon
+{
+   text-align: center;
+   padding: 2% 2%;
+}
+.inside-social-icon
+{
+    padding: 1% 1%;
+}
+/*/////////////////////Footer............................*/
+
+
+/*/////////level4.ejs////////////////////*/
+.level4-main  
+{
+    background-image: url("wallpaper-level4.jpg");
+    padding: 0 0 2% 0;
+}
+.topics-div
+{
+   padding: 1% 0% 1% 5%;
+   margin: 1% 30% 1% 30%;
+   background-color: black;
+   border-radius: 25px;
+   opacity: 40%;
+}
+
+.topics-heading
+{
+    color: white;
+    text-align: center;
+}
+
+.level4div2-main
+{
+    background-image: url("level4div2.jpg");
+}
