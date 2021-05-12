@@ -9,7 +9,7 @@
   "author": "nikhil",
   "license": "ISC",
   "engines": {
-    "node": "14.18.1"
+    "node": "14.18"
   },
   "dependencies": {
     "aos": "^2.3.4",
