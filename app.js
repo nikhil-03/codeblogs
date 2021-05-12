@@ -66,8 +66,13 @@ app.use((error,req,res,next)=>{
 
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 
-const port = 3000 || process.env.PORT;
-require("dotenv").config();
-app.listen(port);
+app.listen(port,function(){
+    console.log("server started sucessfully");
+    
+});
