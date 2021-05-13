@@ -1,0 +1,32 @@
+<%- include("header") %>
+
+<div class="content-body">
+
+    <div class="content-topic">
+        <h1>Update  <%= topic %> </h1>
+    </div>
+
+    <% found.forEach(function(blogs){ %> 
+
+        <div class="content-main">
+           <div>
+              <h2 class="content-title"> <%= blogs.title %>  </h2>
+           </div>
+           <hr>
+           <div class="content-content">
+               <p> <%= blogs.content %>  </p>
+           </div>
+           <hr>
+           <div class="content-link">  
+               <a href="<%=blogs.link%>"><p class="content-url">Link : <%= blogs.link %></p> </a>
+           </div>
+           <hr>
+           <button class="btn btn-secondary btn-lg"><a href="/cupdate/delete/<%=blogs._id%>">Delete</a></button>
+           <button class="btn btn-secondary btn-lg"><a href="/cupdate/update/<%=blogs._id%>">update</a></button>
+        </div>
+        
+    
+    <% }) %> 
+</div>    
+
+<%- include("footer") -%> 

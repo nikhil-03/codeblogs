@@ -10,6 +10,26 @@ router.get("/",(req,res,next)=>{
 
 })
 
+router.get("/update/:topic",(req,res,next)=>{
+    console.log(req.params.topic);
+  
+      // res.render("contents");
+      Blog.find({topic:req.params.topic},function(err,found){
+          if(err){
+              console.log(err);
+              res.status(500).json({error:err});
+          }
+          else if(!found)
+          {
+              res.status(404).json({message:"N data found"});
+          }
+          else{
+              console.log(found);
+              // res.status(200).json({message:found});
+              res.render("updateblog",{found:found , topic:req.params.topic})
+          }
+      })
+  })
 
 
 router.get("/:topic",(req,res,next)=>{
