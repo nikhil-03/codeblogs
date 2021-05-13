@@ -196,8 +196,15 @@ footer{
 .level4div2-main
 {
     background-image: url("level4div2.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
+.resources-a
+{
+    color: #4aa96c;
+}
 /*///////////////////////*/
 .input-data
 {
@@ -205,6 +212,18 @@ footer{
     background-color: #393e46;
     color: white;
     font-family: 'Montserrat', sans-serif;
+}
+.resource-heading{ color: black; }
+.resources-div
+{
+    padding: .5% 60% .5% 2%;
+    
+}
+.resources-div :hover
+{
+   background-color: black;
+   color: blue;
+   border-radius: 25px;
 }
 .form-control
 {
@@ -219,3 +238,53 @@ footer{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
+/*//////////////////contents//////////////*/
+.content-body
+{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #393e46;
+    padding: 2% 2% 2% 2%;
+}
+.content-main
+{
+    
+    margin: 2% 10% 2% 10%;
+    padding: 1% 1% 1% 1%;
+    color: white;
+    border-radius: 25px;
+}
+@media only screen and (max-width: 600px) {
+    .content-main {
+        margin: 2% 5% 2% 5%;
+    }
+  }
+.content-main
+{
+   background-color: #687980;
+   border-radius: 25px;
+}
+.content-topic
+{
+    text-align: center;
+    color: white;
+    font-weight: 200;
+}
+.content-content
+{
+    background-color: #687980;
+    border-radius: 25px;
+}
+.content-link
+{
+    background-color: #687980;
+    border-radius: 25px;
+}
+/*--------------HR--------------*/
+hr{
+    border: dotted #EAF6F6 4px;
+    border-bottom: none;
+    width: 5%;
+    opacity: 50%;
+    margin: 10px auto 10px auto;
+}
+/*------------------------------*/

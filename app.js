@@ -16,6 +16,7 @@ const level2routes = require('./api/routers/level2s');
 const level3routes = require('./api/routers/level3s');
 const level4routes = require('./api/routers/level4s');
 const level5routes = require('./api/routers/common');
+const pipeline = require('./api/routers/contents');
 
 
 // mongoose.connect("mongodb+srv://admin-nikhil:NikPra-0806@cluster0-ijmsp.mongodb.net/todolistDB", {useNewUrlParser: true,, useUnifiedTopology: true});
@@ -49,6 +50,7 @@ app.use('/level2',level2routes);
 app.use('/level3',level3routes);
 app.use('/level4',level4routes);
 app.use('/common',level5routes);
+app.use('/contents',pipeline);
 
 
 app.use((req,res,next)=>{
