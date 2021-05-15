@@ -7,6 +7,7 @@ const blogschema = mongoose.Schema
      title:String,
      content:String,
      tags: String,
-     link:String
+     link:String,
+     createdAt:{ type: Date, default: Date.now }
 });
 module.exports=mongoose.model('Codeblog',blogschema);
