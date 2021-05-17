@@ -8,9 +8,10 @@ const { json } = require('body-parser');
 // const product = require('../models/product');
 
 router.get("/",(req,res,next)=>{
+    // res.render("index");
     if(req.isAuthenticated())
     {
-       res.render("level4");
+       res.render("index");
     }
     else 
     {

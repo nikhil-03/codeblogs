@@ -6,7 +6,15 @@ const { json } = require('body-parser');
 const Codeblog=require("../models/blogs");
 
 router.get("/",(req,res,next)=>{
-    res.render("writeblogs");
+    // res.render("writeblogs");
+    if(req.isAuthenticated())
+    {
+       res.render("writeblogs");
+    }
+    else 
+    {
+        res.redirect("/")
+    }
 })
 
 router.post("/",(req,res,next) =>{

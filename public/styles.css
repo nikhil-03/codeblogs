@@ -296,3 +296,28 @@ hr{
     margin: 10px auto 10px auto;
 }
 /*------------------------------*/
+/*---------LOGIN---------------*/
+.login-main
+{
+    background-color: #393e46;
+    padding: 15% 20% 15% 20%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.login-square
+{
+    background-color: #687980;
+    padding: 10% 10% 10% 10%;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.login-hr-div
+{
+    background-color: #393e46;
+}
+@media only screen and (max-width: 600px) {
+    .login-main {
+        padding: 15% 10% 43% 10%;
+    }
+  }

@@ -6,7 +6,15 @@ const Blog=require("../models/blogs");
 
 router.get("/",(req,res,next)=>{
 
-    res.render("contents");
+    // res.render("contents");
+    if(req.isAuthenticated())
+    {
+       res.render("contents");
+    }
+    else 
+    {
+        res.redirect("/")
+    }
 
 })
 
