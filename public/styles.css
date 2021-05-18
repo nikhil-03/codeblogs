@@ -321,3 +321,20 @@ hr{
         padding: 15% 10% 43% 10%;
     }
   }
+
+/*/////////////////////////////////////////////////*/  
+.nav-bar
+{
+    z-index: 10;  
+position: absolute;  
+right: 0;  
+top: 0;
+    background-color: #393e46;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1% 1% 0 0;
+}
+.navbar-image
+{
+    width: 20px;
+}

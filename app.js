@@ -10,7 +10,7 @@ const session=require("express-session");
 const passportLocalMongoose=require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-// const User=require('./api/models/user');
+const User=require('./api/models/user');
 
 app.use(express.static("public"));
 app.set('view engine','ejs');
@@ -22,13 +22,18 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-const userSchema = new mongoose.Schema({
-  img:String,
-  name:String,
-  googleId:String
-});
-userSchema.plugin(findOrCreate);
-const User = new mongoose.model('User', userSchema);
+//
+// const userSchema = new mongoose.Schema({
+//   img:String,
+//   name:String,
+//   googleId:String
+// });
+// userSchema.plugin(findOrCreate);
+// const User = new mongoose.model('User', userSchema);
+//
+// User = new mongoose.model('User', userSchema);
+
+//
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });

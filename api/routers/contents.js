@@ -29,7 +29,7 @@ router.get("/update/:topic",(req,res,next)=>{
           }
           else if(!found)
           {
-              res.status(404).json({message:"N data found"});
+              res.status(404).json({message:"No data found"});
           }
           else{
               console.log(found);
@@ -51,7 +51,7 @@ router.get("/:topic",(req,res,next)=>{
         }
         else if(!found)
         {
-            res.status(404).json({message:"N data found"});
+            res.status(404).json({message:"No data found"});
         }
         else{
             console.log(found);
