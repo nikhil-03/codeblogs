@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div>
+        <h2 class="input-blog-heading">Write Blogs</h2>
+    </div>
+    <div class="input-data">
+        <form action="/level3" method="post">
+            <div class="form-group"> 
+             <div class="input-group mb-3">
+                 
+                 <label class="input-group-text" for="inputGroupSelect01">Difficulty</label>
+                 
+                 <select class="custom-select" name="difficult" id="inputGroupSelect01" required>
+                   <option selected>Choose...</option>
+                   <option value="easy">Easy</option>
+                   <option value="medium">Medium</option>
+                   <option value="hard">Hard</option>
+                 </select>
+               </div>
+               <label class="post-label">Tag</label>
+               <input class="form-control" type="text" name="tag">
+
+               <label class="post-label">Question</label>
+               <input class="form-control" type="text" name="question">
+         
+               <label class="post-label">Explanation</label>
+               <textarea class="form-control" name="explanation" id="" cols="30" rows="10"></textarea>
+         
+               <label class="post-label">Link</label>
+               <input class="form-control" type="text" name="link">
+
+               <label class="post-label">Youtube-Links</label>
+               <input class="form-control" type="text" name="ytlink">
+            </div>  
+            <button class="btn btn-secondary btn-lg" type="submit" name="button">Save</button>
+         </form>
+    </div>
+</body>
+</html>

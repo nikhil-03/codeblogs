@@ -1,3 +1,39 @@
 <%- include("header") %>
-  Heyy  im level 3
+
+<div class="content-body">
+
+
+
+    <% found.forEach(function(blogs){ %> 
+
+        <div class="content-main">
+           <div>
+              <h4 data-aos="fade-up" class="content-title"> <%= blogs.tag %>'s <%= blogs.difficult%> Problem </h4>
+           </div>
+           <div>
+            <h6 data-aos="fade-up" class="content-title"> <%= blogs.question %>  </h6>
+         </div>
+           <hr>
+           <div class="content-content">
+               <p data-aos="fade-up"> <%= blogs.explanation %>  </p>
+           </div>
+           <hr>
+           <div class="content-link">  
+               <a href="<%=blogs.link%>"><p  data-aos="fade-right" class="content-url">Link : <%= blogs.link %></p> </a>
+           </div>
+           <div class="content-link">  
+               <a href="<%=blogs.ytlink%>"><p  data-aos="fade-right" class="content-url">Link : <%= blogs.ytlink %></p> </a>
+          </div>
+
+           <div>
+               <a href="https://wa.me/917979047466?text=<%=blogs.tag%>:%20<%=blogs.explanation%>%20<%=blogs._id%>:%20Need%20help->"><p data-aos="fade-right">Need help ? <i class="fa fa-whatsapp" aria-hidden="true"></i> </p></a>
+               <!-- <%var str=blogs.createdAt%>  -->
+               <p><%=blogs.createdAt.toDateString()%></p>
+           </div>
+           <hr class="login-hr">
+        </div>
+    
+    <% }) %> 
+</div>    
+
 <%- include("footer") -%> 

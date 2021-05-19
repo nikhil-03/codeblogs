@@ -136,6 +136,14 @@ img
     padding: 2% 2%;
    
 }
+
+.zaxis-extension
+{
+    z-index: 10;  
+    position: absolute;  
+    right: 0;  
+    top: 20;
+}
 /*//////////////////above only index page////////////*/
 a{
     color: white;
@@ -322,13 +330,13 @@ hr{
     }
   }
 
-/*/////////////////////////////////////////////////*/  
+/*/////////////////////////nav-bar////////////////////////*/  
 .nav-bar
 {
     z-index: 10;  
-position: absolute;  
-right: 0;  
-top: 0;
+    position: absolute;  
+    right: 0;  
+    top: 0;
     background-color: #393e46;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -338,3 +346,4 @@ top: 0;
 {
     width: 20px;
 }
+/*------------------------------------------*/

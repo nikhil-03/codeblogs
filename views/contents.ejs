@@ -12,18 +12,20 @@
 
         <div class="content-main">
            <div>
-              <h2 class="content-title"> <%= blogs.title %>  </h2>
+              <h2 data-aos="fade-up" class="content-title"> <%= blogs.title %>  </h2>
            </div>
            <hr>
            <div class="content-content">
-               <p> <%= blogs.content %>  </p>
+               <p data-aos="fade-up"> <%= blogs.content %>  </p>
            </div>
            <hr>
            <div class="content-link">  
-               <a href="<%=blogs.link%>"><p class="content-url">Link : <%= blogs.link %></p> </a>
+               <a href="<%=blogs.link%>"><p  data-aos="fade-right" class="content-url">Link : <%= blogs.link %></p> </a>
            </div>
            <div>
-               <a href="https://wa.me/917979047466?text=<%=blogs.topic%>:%20<%=blogs.content%>%20<%=blogs._id%>:%20Need%20help">Need help ? <i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+               <a href="https://wa.me/917979047466?text=<%=blogs.topic%>:%20<%=blogs.content%>%20<%=blogs._id%>:%20Need%20help"><p data-aos="fade-right">Need help ? <i class="fa fa-whatsapp" aria-hidden="true"></i> </p></a>
+               <!-- <%var str=blogs.createdAt%>  -->
+               <p><%=blogs.createdAt.toDateString()%></p>
            </div>
            <hr class="login-hr">
         </div>
