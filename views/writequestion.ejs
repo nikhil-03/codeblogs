@@ -15,24 +15,41 @@
 </head>
 <body>
     <div>
-        <h2 class="input-blog-heading">Write Blogs</h2>
+        <h2 class="input-blog-heading">Write Questions</h2>
     </div>
     <div class="input-data">
         <form action="/level3" method="post">
             <div class="form-group"> 
              <div class="input-group mb-3">
-                 
                  <label class="input-group-text" for="inputGroupSelect01">Difficulty</label>
-                 
                  <select class="custom-select" name="difficult" id="inputGroupSelect01" required>
                    <option selected>Choose...</option>
                    <option value="easy">Easy</option>
                    <option value="medium">Medium</option>
                    <option value="hard">Hard</option>
                  </select>
-               </div>
-               <label class="post-label">Tag</label>
-               <input class="form-control" type="text" name="tag">
+             </div>
+             <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Tag</label>
+                <select class="custom-select" name="tag" id="inputGroupSelect01" required>
+                    <option value="Time Complexity">Time Complexity</option>
+                    <option value="Arrays">Arrays</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Binary Search">Binary Search</option>
+                    <option value="Two Pointers">Two Pointers</option>
+                    <option value="Link Lists">Link Lists</option>
+                    <option value="Stacks and Queues">Stacks and Queues</option>
+                    <option value="Backtracing">Backtracing</option>
+                    <option value="Hashing">Hashing</option>
+                    <option value="Heaps and Maps">Heaps and Maps</option>
+                    <option value="Tree Data Structure">Tree Data Structure</option>
+                    <option value="Dynamic Programming">Dynamic Programming</option>
+                    <option value="Greedy Algirithm">Greedy Algirithm</option>
+                    <option value="Graphs">Graphs</option>
+                </select>
+            </div>
+               <!-- <label class="post-label">Tag</label>
+               <input class="form-control" type="text" name="tag"> -->
 
                <label class="post-label">Question</label>
                <input class="form-control" type="text" name="question">
