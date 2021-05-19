@@ -11,19 +11,24 @@
            <div>
               <h4 data-aos="fade-up" class="content-title"> <%= blogs.tag %>'s <%= blogs.difficult%> Problem </h4>
            </div>
-           <div>
-            <h6 data-aos="fade-up" class="content-title"> <%= blogs.question %>  </h6>
-         </div>
+
+           <div class="content-link">  
+             <a href="<%=blogs.question%>"><p  data-aos="fade-right" class="content-url">QUESTION LINK</p> </a>
+           </div>
+           <!-- <div>
+            <h6 data-aos="fade-up" class="content-title"> <%=blogs.question%>  </h6>
+         </div> -->
+
            <hr>
            <div class="content-content">
                <p data-aos="fade-up"> <%= blogs.explanation %>  </p>
            </div>
            <hr>
            <div class="content-link">  
-               <a href="<%=blogs.link%>"><p  data-aos="fade-right" class="content-url">Link : <%= blogs.link %></p> </a>
+               <a href="<%=blogs.link%>"><p  data-aos="fade-right" class="content-url">CODE-LINK  </p> </a>
            </div>
            <div class="content-link">  
-               <a href="<%=blogs.ytlink%>"><p  data-aos="fade-right" class="content-url">Link : <%= blogs.ytlink %></p> </a>
+               <a href="<%=blogs.ytlink%>"><p  data-aos="fade-right" class="content-url">YOUTUBE LINK : <%= blogs.ytlink %></p> </a>
           </div>
 
            <div>
