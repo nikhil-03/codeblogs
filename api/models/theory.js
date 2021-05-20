@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
-const noobieschema = mongoose.Schema
+const theoryschema = mongoose.Schema
 ({
     _id:mongoose.Schema.Types.ObjectId,
-     topic:String,
+     tag:String,
+     heading:String,
      theory:String,
+     difficult: String,
      link:String,
      ytlink:String,
      createdAt:{ type: Date, default: Date.now }
 });
-module.exports=mongoose.model('Noobie',noobieschema);
+module.exports=mongoose.model('Theory',theoryschema);

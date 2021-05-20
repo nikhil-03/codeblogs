@@ -347,3 +347,17 @@ hr{
     width: 20px;
 }
 /*------------------------------------------*/
+
+.form-inline
+{
+    text-align: center;
+    padding: 0 0 4% 0;
+    justify-content: center;
+    color: white;
+}
+
+li
+{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}

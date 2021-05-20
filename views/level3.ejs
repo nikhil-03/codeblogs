@@ -7,7 +7,7 @@
     <meta name="author" content="Nikhil Prakash" >
     <meta name="keywords" content="placement,interviewbit,leetcode,codeforces" > 
 
-    <title>Placement</title>
+    <title>QUESTIONS</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -33,6 +33,10 @@
 
     <h2 class="input-blog-heading">Question Bank</h2>
 
+    <form class="form-inline" action="/level3/search-item-name" method="POST">
+        <input class="form-control mr-sm-2 form-search" id="searchName" name="fltrname" type="text" placeholder="Search Topic" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" name="button" type="submit">Search</button>
+      </form>
 
     <% found.forEach(function(blogs){ %> 
 
@@ -72,3 +76,35 @@
 </div>    
 
 <%- include("footer") -%> 
+
+<script>
+
+    $(function(){
+        $('#searchName').autocomplete({
+            source : function(req,res){
+                $.ajax({
+                    url:"level3/autocomplete/",
+                    dataType:"jsonp",
+                    type:"GET",
+                    data:req,
+                    success:function(data){
+                    //    console.log(data);
+                       res(data);
+                    },
+                    err:function(err){
+                        console.log(err.status);
+                    }
+                });
+            },
+            minLength:1,
+            select:function(event,ui)
+            {
+                if(ui.item){
+                    $('#searchName').text(ui.item.label);
+                }
+            }
+        })
+    })
+
+
+</script>

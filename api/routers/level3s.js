@@ -26,7 +26,7 @@ router.get("/",(req,res,next)=>{
     })
 
 })
-router.get("/question",(req,res,next)=>{
+router.get("/upload",(req,res,next)=>{
     res.render("writequestion")
 })
 router.post('/',(req,res,next)=>{
@@ -60,6 +60,86 @@ router.post('/',(req,res,next)=>{
         })
     })
 
+})
+
+router.get("/autocomplete",function(req,res){
+    var regex = new RegExp(req.query["term"],'gi');
+
+    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
+
+      filter.exec(function(err,data){
+          
+          var result=[];
+          if(!err){
+              if(data && data.length && data.length>0){
+                  data.forEach(user=>{
+                      let obj={
+                          id:user._id,
+                          label:user.tag
+                        };
+                       result.push(obj); 
+                  });
+              }
+              res.jsonp(result);
+          }
+          else { res.se }  
+      })     
+})
+router.get("/level3/autocomplete",function(req,res){
+    var regex = new RegExp(req.query["term"],'gi');
+
+    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
+
+      filter.exec(function(err,data){
+          
+          var result=[];
+          if(!err){
+              if(data && data.length && data.length>0){
+                  data.forEach(user=>{
+                      let obj={
+                          id:user._id,
+                          label:user.tag
+                        };
+                       result.push(obj); 
+                  });
+              }
+              res.jsonp(result);
+          }
+          else { res.se }  
+      })     
+})
+router.post("/search-item-name",(req,res)=>{
+    const x = req.body.fltrname;
+    console.log(x.length);
+   if(x.length>0)
+   {
+    Question.find({tag:x }).exec((err,found)=>{
+        if(!err)
+        {
+            console.log(found);
+            res.render("level3",{found : found});
+        }
+        else if(!err)
+        {
+            res.render("level3",{found : found});
+        }
+    })
+   }
+   else
+   {
+    Question.find({}).exec((err,found)=>{
+        if(!err)
+        {
+            console.log(found);
+            res.render("level3",{found : found});
+        }
+        else if(!err)
+        {
+            res.render("level3",{found : found});
+        }
+    })
+   }
+    
 })
 
 

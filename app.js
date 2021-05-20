@@ -22,18 +22,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-//
-// const userSchema = new mongoose.Schema({
-//   img:String,
-//   name:String,
-//   googleId:String
-// });
-// userSchema.plugin(findOrCreate);
-// const User = new mongoose.model('User', userSchema);
-//
-// User = new mongoose.model('User', userSchema);
-
-//
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
@@ -57,8 +45,7 @@ const pipeline     = require('./api/routers/contents');
 const updateblogs  = require('./api/routers/updateblog');
 const loging       = require('./api/routers/loging');
 
-
-// mongoose.connect("mongodb+srv://admin-nikhil:NikPra-0806@cluster0-ijmsp.mongodb.net/todolistDB", {useNewUrlParser: true,, useUnifiedTopology: true});
+// 
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
