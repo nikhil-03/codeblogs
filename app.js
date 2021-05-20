@@ -44,6 +44,7 @@ const level5routes = require('./api/routers/common');
 const pipeline     = require('./api/routers/contents');
 const updateblogs  = require('./api/routers/updateblog');
 const loging       = require('./api/routers/loging');
+const index = require('./api/routers/index');
 
 // 
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -88,7 +89,7 @@ app.use((req, res, next) => {
     next();
   });
 
-
+/////////////////////////
 app.get("/",(req,res,next)=>{
   res.render("login");
 })
@@ -110,6 +111,7 @@ app.use('/common',level5routes);
 app.use('/contents',pipeline);
 app.use('/cupdate',updateblogs);
 app.use("/logged-in",loging);
+app.use("/index",index);
 
 
 app.use((req,res,next)=>{
