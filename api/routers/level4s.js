@@ -8,14 +8,9 @@ const { json } = require('body-parser');
 // const product = require('../models/product');
 
 router.get("/",(req,res,next)=>{
-    if(req.isAuthenticated())
-    {
+    
+    
        res.render("level4");
-    }
-    else 
-    {
-        res.redirect("/")
-    }
 })
 
 
