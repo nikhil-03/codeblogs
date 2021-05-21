@@ -26,7 +26,12 @@ router.get("/",(req,res,next)=>{
 })
 
 router.get("/upload",(req,res,next)=>{
-    res.render("writenoobie")
+    // res.render("writenoobie")
+    if(req.isAuthenticated())
+    {
+        res.render("writenoobie")
+    }
+    else res.render("login")
 })
 router.post('/',(req,res,next)=>{
     const noobie=new Noobie({

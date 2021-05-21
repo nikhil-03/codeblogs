@@ -26,7 +26,11 @@ router.get("/",(req,res,next)=>{
 })
 
 router.get("/upload",(req,res,next)=>{
-    res.render("writetheory")
+    if(req.isAuthenticated())
+    {
+        res.render("writetheory")
+    }
+    else res.render("login")
 })
 router.post('/',(req,res,next)=>{
     const theory=new Theory({

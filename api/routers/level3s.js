@@ -27,7 +27,12 @@ router.get("/",(req,res,next)=>{
 
 })
 router.get("/upload",(req,res,next)=>{
-    res.render("writequestion")
+    // res.render("writequestion")
+    if(req.isAuthenticated())
+    {
+        res.render("writequestion")
+    }
+    else res.render("login")
 })
 router.post('/',(req,res,next)=>{
     const question=new Question({
