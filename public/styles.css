@@ -360,4 +360,21 @@ li
 {
     color: white;
     font-family: 'Montserrat', sans-serif;
+    padding: 1% 0 0 0;
+    background-color: #393e46;
 }
+.link-visited:visited {
+    color: #28df99;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  .page-details
+  {
+      color: white;
+      text-align: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .page-details {
+        font-size: smaller;
+    }
+  }
