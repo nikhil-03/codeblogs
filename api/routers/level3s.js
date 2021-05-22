@@ -8,6 +8,7 @@ const Question = require('../models/questions');
 
 router.get("/",(req,res,next)=>{
     // res.render("level3");
+    const val=[];
     Question.find({},function(err,found){
         if(err)
         {
@@ -21,33 +22,33 @@ router.get("/",(req,res,next)=>{
         else 
         {
             console.log(found);
-            // res.render("level3" , {found:found})
-            res.render("question-level")
-        }
-    })
-
-})
-router.get("/:difficult",(req,res,next)=>{
-    const val=req.params.difficult;
-    Question.find({difficult:val},function(err,found){
-        if(err)
-        {
-            console.log(err);
-        }
-        else if(!found)
-        {
-            res.status(404).json({message:"No data"});
-            console.log("No data");
-        }
-        else 
-        {
-            console.log(found);
-            res.render("level3" , {found:found , label:val})
+            res.render("level3" , {found:found})
             // res.render("question-level")
         }
     })
 
 })
+// router.get("/:difficult",(req,res,next)=>{
+//     const val=req.params.difficult;
+//     Question.find({difficult:val},function(err,found){
+//         if(err)
+//         {
+//             console.log(err);
+//         }
+//         else if(!found)
+//         {
+//             res.status(404).json({message:"No data"});
+//             console.log("No data");
+//         }
+//         else 
+//         {
+//             console.log(found);
+//             res.render("level3" , {found:found })
+//             // res.render("question-level")
+//         }
+//     })
+
+// })
 router.get("/upload",(req,res,next)=>{
     // res.render("writequestion")
     if(req.isAuthenticated())
@@ -89,7 +90,7 @@ router.post('/',(req,res,next)=>{
 
 })
 
-router.get("/autocomplete",function(req,res){
+router.get("/autocomplete/",function(req,res){
     var regex = new RegExp(req.query["term"],'gi');
 
     var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
@@ -112,7 +113,7 @@ router.get("/autocomplete",function(req,res){
           else { res.se }  
       })     
 })
-router.get("/level3/autocomplete",function(req,res){
+router.get("/level3/autocomplete/",function(req,res){
     var regex = new RegExp(req.query["term"],'gi');
 
     var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
@@ -137,6 +138,9 @@ router.get("/level3/autocomplete",function(req,res){
 })
 router.post("/search-item-name",(req,res)=>{
     const x = req.body.fltrname;
+    // const val=req.params.diff;
+    // console.log(val);
+
     console.log(x.length);
    if(x.length>0)
    {
