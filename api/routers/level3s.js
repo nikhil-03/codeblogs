@@ -21,7 +21,29 @@ router.get("/",(req,res,next)=>{
         else 
         {
             console.log(found);
-            res.render("level3" , {found:found})
+            // res.render("level3" , {found:found})
+            res.render("question-level")
+        }
+    })
+
+})
+router.get("/:difficult",(req,res,next)=>{
+    const val=req.params.difficult;
+    Question.find({difficult:val},function(err,found){
+        if(err)
+        {
+            console.log(err);
+        }
+        else if(!found)
+        {
+            res.status(404).json({message:"No data"});
+            console.log("No data");
+        }
+        else 
+        {
+            console.log(found);
+            res.render("level3" , {found:found , label:val})
+            // res.render("question-level")
         }
     })
 

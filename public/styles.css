@@ -378,3 +378,17 @@ li
         font-size: smaller;
     }
   }
+  .question-level
+  {
+      background-color: #393e46;
+      color: white;
+      padding: 2% 2% 2% 2%;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .question-blocks {
+        padding: 6% 0% ;
+        margin: 10% 5% 10% 5%;
+    }
+  }
