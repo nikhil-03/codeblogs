@@ -36,6 +36,13 @@
     <hr>
     <form class="form-inline" action="/level3/search-item-name" method="POST">
         <input class="form-control mr-sm-2 form-search" id="searchName" name="fltrname" type="text" placeholder="Search Topic" aria-label="Search">
+        <select class="form-select" name="difficulty" aria-label="Default select example">
+            <option value="" selected>Select level</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="">All</option>
+          </select>
         <button class="btn btn-outline-success my-2 my-sm-0" name="button" type="submit">Search</button>
       </form>
 
@@ -43,7 +50,7 @@
 
         <div class="content-main">
            <div>
-              <h4 data-aos="fade-up" class="content-title"> <%= blogs.tag %>'s <%= blogs.difficult%> Problem </h4>
+              <h4 class="content-title"> <%= blogs.tag %>'s <%= blogs.difficult%> Problem </h4>
            </div>
 
            <div class="content-link">  
@@ -55,7 +62,7 @@
 
            <hr>
            <div class="content-content">
-               <p data-aos="fade-up"> <%= blogs.explanation %>  </p>
+               <p data-aos="fade-up"></p> <%= blogs.explanation %>  </p>
            </div>
            <hr>
            <div class="content-link">  

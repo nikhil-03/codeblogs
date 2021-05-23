@@ -93,7 +93,7 @@ router.post('/',(req,res,next)=>{
 router.get("/autocomplete/",function(req,res){
     var regex = new RegExp(req.query["term"],'gi');
 
-    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
+    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(5);
 
       filter.exec(function(err,data){
           
@@ -116,7 +116,7 @@ router.get("/autocomplete/",function(req,res){
 router.get("/level3/autocomplete/",function(req,res){
     var regex = new RegExp(req.query["term"],'gi');
 
-    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(20);
+    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(5);
 
       filter.exec(function(err,data){
           
@@ -138,13 +138,13 @@ router.get("/level3/autocomplete/",function(req,res){
 })
 router.post("/search-item-name",(req,res)=>{
     const x = req.body.fltrname;
-    // const val=req.params.diff;
+    const val=req.body.difficulty;
     // console.log(val);
 
     console.log(x.length);
-   if(x.length>0)
+   if(x.length>0 && val.length>0)
    {
-    Question.find({tag:x }).exec((err,found)=>{
+    Question.find({tag:x,difficult:val }).exec((err,found)=>{
         if(!err)
         {
             console.log(found);
@@ -156,9 +156,37 @@ router.post("/search-item-name",(req,res)=>{
         }
     })
    }
-   else
+   else if(x.length==0 && val.length==0)
    {
     Question.find({}).exec((err,found)=>{
+        if(!err)
+        {
+            console.log(found);
+            res.render("level3",{found : found});
+        }
+        else if(!err)
+        {
+            res.render("level3",{found : found});
+        }
+    })
+   }
+   else if(x.length==0 && val.length>0)
+   {
+    Question.find({difficult:val}).exec((err,found)=>{
+        if(!err)
+        {
+            console.log(found);
+            res.render("level3",{found : found});
+        }
+        else if(!err)
+        {
+            res.render("level3",{found : found});
+        }
+    })
+   }
+   else if(x.length>0 && val.length==0)
+   {
+    Question.find({tag:x}).exec((err,found)=>{
         if(!err)
         {
             console.log(found);
