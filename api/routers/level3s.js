@@ -21,34 +21,15 @@ router.get("/",(req,res,next)=>{
         }
         else 
         {
-            console.log(found);
-            res.render("level3" , {found:found})
+            // console.log(found);
+            res.render("level3" , {found:found , len:found.length})
+            console.log(found.length);
             // res.render("question-level")
         }
     })
 
 })
-// router.get("/:difficult",(req,res,next)=>{
-//     const val=req.params.difficult;
-//     Question.find({difficult:val},function(err,found){
-//         if(err)
-//         {
-//             console.log(err);
-//         }
-//         else if(!found)
-//         {
-//             res.status(404).json({message:"No data"});
-//             console.log("No data");
-//         }
-//         else 
-//         {
-//             console.log(found);
-//             res.render("level3" , {found:found })
-//             // res.render("question-level")
-//         }
-//     })
 
-// })
 router.get("/upload",(req,res,next)=>{
     // res.render("writequestion")
     if(req.isAuthenticated())
@@ -141,62 +122,66 @@ router.post("/search-item-name",(req,res)=>{
     const val=req.body.difficulty;
     // console.log(val);
 
-    console.log(x.length);
+    // console.log(x.length);
    if(x.length>0 && val.length>0)
    {
     Question.find({tag:x,difficult:val }).exec((err,found)=>{
         if(!err)
         {
-            console.log(found);
-            res.render("level3",{found : found});
+            // console.log(found);
+            res.render("level3",{found : found,len:found.length});
         }
         else if(!err)
         {
-            res.render("level3",{found : found});
+            res.render("level3",{found : found,len:found.length});
         }
     })
+    // console.log(found.length);
    }
    else if(x.length==0 && val.length==0)
    {
     Question.find({}).exec((err,found)=>{
-        if(!err)
+        if(err)
         {
-            console.log(found);
-            res.render("level3",{found : found});
+            // console.log(found);
+            res.render("level3",{found : found,len:found.length});
         }
         else if(!err)
         {
-            res.render("level3",{found : found});
+            res.render("level3",{found : found,len:found.length});
         }
     })
+    // console.log(found.length);
    }
    else if(x.length==0 && val.length>0)
    {
     Question.find({difficult:val}).exec((err,found)=>{
-        if(!err)
+        if(err)
         {
-            console.log(found);
-            res.render("level3",{found : found});
+            // console.log(found);
+            res.render("level3",{found : found,len:found.length});
         }
         else if(!err)
         {
-            res.render("level3",{found : found});
+            res.render("level3",{found : found,len:found.length});
         }
     })
+    // console.log(found.length);
    }
    else if(x.length>0 && val.length==0)
    {
     Question.find({tag:x}).exec((err,found)=>{
-        if(!err)
+        if(err)
         {
-            console.log(found);
-            res.render("level3",{found : found});
+            // console.log(found);
+            res.render("level3",{found : found,len:found.length});
         }
         else if(!err)
         {
-            res.render("level3",{found : found});
+            res.render("level3",{found : found,len:found.length});
         }
     })
+    // console.log(found.length);
    }
     
 })

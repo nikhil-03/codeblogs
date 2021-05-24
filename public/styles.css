@@ -351,7 +351,7 @@ hr{
 .form-inline
 {
     text-align: center;
-    padding: 0 0 4% 0;
+    /* padding: 0 0 4% 0; */
     justify-content: center;
     color: white;
 }
@@ -391,4 +391,11 @@ li
         padding: 6% 0% ;
         margin: 10% 5% 10% 5%;
     }
+  }
+  .length-of-array
+  {
+      background-color: #393e46;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
   }
