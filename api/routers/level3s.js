@@ -22,7 +22,7 @@ router.get("/",(req,res,next)=>{
         else 
         {
             // console.log(found);
-            res.render("level3" , {found:found , len:found.length})
+            res.render("level3" , {found:found , len:found.length, title:"",level:""})
             console.log(found.length);
             // res.render("question-level")
         }
@@ -31,12 +31,12 @@ router.get("/",(req,res,next)=>{
 })
 
 router.get("/upload",(req,res,next)=>{
-    // res.render("writequestion")
-    if(req.isAuthenticated())
-    {
-        res.render("writequestion")
-    }
-    else res.render("login")
+    res.render("writequestion")
+    // if(req.isAuthenticated())
+    // {
+    //     res.render("writequestion")
+    // }
+    // else res.render("login")
 })
 router.post('/',(req,res,next)=>{
     const question=new Question({
@@ -74,7 +74,7 @@ router.post('/',(req,res,next)=>{
 router.get("/autocomplete/",function(req,res){
     var regex = new RegExp(req.query["term"],'gi');
 
-    var filter=Question.find({tag:regex},{'tag':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(5);
+    var filter=Question.find({tag:regex,explanation:regex},{'tag':1,'explanation':1}).sort({"update_at":-1}).sort({"created_at":-1}).limit(5);
 
       filter.exec(function(err,data){
           
@@ -84,7 +84,8 @@ router.get("/autocomplete/",function(req,res){
                   data.forEach(user=>{
                       let obj={
                           id:user._id,
-                          label:user.tag
+                          label:user.tag,
+                          explanation:user.explanation
                         };
                        result.push(obj); 
                   });
@@ -129,11 +130,11 @@ router.post("/search-item-name",(req,res)=>{
         if(!err)
         {
             // console.log(found);
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:x,level:val});
         }
         else if(!err)
         {
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:x,level:val});
         }
     })
     // console.log(found.length);
@@ -144,11 +145,11 @@ router.post("/search-item-name",(req,res)=>{
         if(err)
         {
             // console.log(found);
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:"",level:""});
         }
         else if(!err)
         {
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:"",level:""});
         }
     })
     // console.log(found.length);
@@ -159,11 +160,11 @@ router.post("/search-item-name",(req,res)=>{
         if(err)
         {
             // console.log(found);
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:"",level:val});
         }
         else if(!err)
         {
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:"",level:val});
         }
     })
     // console.log(found.length);
@@ -174,11 +175,11 @@ router.post("/search-item-name",(req,res)=>{
         if(err)
         {
             // console.log(found);
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:x,level:""});
         }
         else if(!err)
         {
-            res.render("level3",{found : found,len:found.length});
+            res.render("level3",{found : found,len:found.length,title:x,level:""});
         }
     })
     // console.log(found.length);

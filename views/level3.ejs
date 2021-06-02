@@ -7,7 +7,7 @@
     <meta name="author" content="Nikhil Prakash" >
     <meta name="keywords" content="placement,interviewbit,leetcode,codeforces" > 
 
-    <title>Hand-picked questions from various sections with solutions and explanation</title>
+    <title><%=title%> <%=level%>Programming Questions</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,10 +30,11 @@
 
 <div class="content-body">
 
-    <h2 class="input-blog-heading">Question Bank </h2>
+    <h2 class="input-blog-heading"><%=title%> <%=level%> questions </h2>
     <h4 data-aos="zoom-out-down" class="page-details">In this level ill be giving questions from different web sites using all the concepts. Ill be providing the questions, hints ,
         my codes and youtube videos too in future.</h4>
     <hr>
+    
     <form class="form-inline" action="/level3/search-item-name" method="POST">
         <input class="form-control mr-sm-2 form-search" id="searchName" name="fltrname" type="text" placeholder="Search Topic" aria-label="Search">
         <select class="form-select" name="difficulty" aria-label="Default select example">
@@ -45,6 +46,8 @@
           </select>
         <button class="btn btn-outline-success my-2 my-sm-0" name="button" type="submit">Search</button>
       </form>
+
+
       <div class="length-of-array">
          <h6>No. of Questions : <%=len%></h6>
       </div>
@@ -123,6 +126,7 @@
             {
                 if(ui.item){
                     $('#searchName').text(ui.item.label);
+                    // $('#searchName').text(ui.item.explanation);
                 }
             }
         })

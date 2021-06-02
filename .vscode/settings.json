@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/ddf224ec-6a91-4fb1-9500-5dde1dbd8dcd/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/nikcodeblogs",
+    "appService.deploySubpath": "."
+}
