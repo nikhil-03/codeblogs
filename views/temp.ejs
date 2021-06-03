@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Questions</title>
+</head>
+<body>
+    <form class="search-form">
+        <input type="text" class="search" placeholder="City or State">
+        <ul class="suggestions">
+          <li>Filter for a city</li>
+          <li>or a state</li>
+        </ul>
+      </form>
+</body>
+</html>
+<style>
+ 
+</style>
+<script>
+     const test = <%- JSON.stringify(question) %>;
+     const questions = [];
+     questions.push(test);
+// function findMatches(wordToMatch, questions) {
+//   return questions.filter(topic => {
+//     // here we need to figure out if the city or state matches what was searched
+//     const regex = new RegExp(wordToMatch, 'gi');
+//     return topic.questionName.match(regex) || topic.tag.match(regex)
+//   });
+// }
+function findMatches(wordToMatch, questions) {
+  return questions.filter(topic => {
+    const regex = new RegExp(wordToMatch, 'gi');
+    return topic.questionName.match(regex) || topic.tag.match(regex)
+  });
+}
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function displayMatches() {
+  const matchArray = findMatches(this.value, questions);
+  const html = matchArray.map(topic => {
+    const regex = new RegExp(this.value, 'gi');
+    const tagName = topic.tag.replace(regex, `<span class="hl">${this.value}</span>`);
+    const questionNames = topic.questionName.replace(regex, `<span class="hl">${this.value}</span>`);
+    return `
+      <li>
+        <span class="name">${tagName}, ${questionNames}</span>
+        <span class="population">${numberWithCommas(topic.population)}</span>
+      </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
+}
+
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+
+
+
+</script>

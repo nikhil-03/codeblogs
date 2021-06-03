@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const { json } = require('body-parser');
 const Question = require('../models/questions');
+const questions = require('../models/questions');
 
 
 
@@ -29,7 +30,11 @@ router.get("/",(req,res,next)=>{
     })
 
 })
-
+router.get("/allquestions",(req,res,next)=>{
+    questions.find({},function(err,question){
+        res.render("temp",{question:question});
+    })
+})
 router.get("/upload",(req,res,next)=>{
     res.render("writequestion")
     // if(req.isAuthenticated())
@@ -43,6 +48,7 @@ router.post('/',(req,res,next)=>{
         _id:mongoose.Types.ObjectId(),
         tag:req.body.tag,
         question:req.body.question,
+        questionName:req.body.questionName,
         explanation:req.body.explanation,
         difficult:req.body.difficult,
         link:req.body.link,
