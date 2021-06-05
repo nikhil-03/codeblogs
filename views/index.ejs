@@ -37,8 +37,9 @@
 
 <div class="part-0">
     <div class="nav-bar">
-        <img class="navbar-image" src="<%=found.img%>" alt="" srcset=""><%= found.name%>
-        <a href="/level3/allquestions">Search a Question</a>
+        <img class="navbar-image" src="<%=found.img%>" alt="" srcset=""> <%= found.name%>
+        <br>
+        <h6 class="br-margin" ><a href="/level3/allquestions">Search Question?</a></h6>
      </div>
 </div>
 
@@ -112,3 +113,9 @@
 </script>
 
 <%- include("footer") -%> 
+
+<style>
+    .br-margin{
+        padding: 10px ;
+    }
+</style>
