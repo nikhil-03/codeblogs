@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All placement related topics and resources in a single page. Question bank from all over the websites">
+    <meta name="author" content="Nikhil Prakash" >
+    <meta name="keywords" content="placement,interviewbit,leetcode,codeforces" > 
+
+    <title>Data structures and algorithms</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d745d679ce.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+
+<link rel="icon" href="/favicon.png" type="image/icon type">
+<script data-ad-client="ca-pub-9407364125061598" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>   
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<body>
+    <form class="search-form">
+        <input type="text" class="search" placeholder="Algorithms...">
+        <ul class="suggestions">
+          <li>Filter for a topic</li>
+          <li>or the Algorithm</li>
+        </ul>
+      </form>
+</body>
+</html>
+<style>
+ html {
+ 
+  background: #393e46;
+ 
+}
+li
+{
+    color: white;
+}
+body
+{
+    background-color: #393e46;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  width: 60%;
+  
+}
+
+.search {
+  
+   margin: 2% 10% 2% 10%;
+}
+
+input.search {
+ 
+  border-radius: 5px;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+.hl {
+  background: #ffc600 ;
+}
+a
+{
+  color: black;
+  text-decoration: none;
+}
+a:active
+{
+  color: black;
+}
+hr{
+    border: dotted #EAF6F6 4px;
+    border-bottom: none;
+    width: 5%;
+    opacity: 50%;
+    margin: 10px auto 10px auto;
+}
+.search-output
+{
+    background-color: #687980;
+    color: white;
+    padding: 1% 1% 1% 1%;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1% 10% 1% 10%;
+}
+@media only screen and (max-width: 600px) {
+    .search-output {
+        margin: 1% 2% 1% 2%;
+        padding: 1% 1% 1% 1%;
+        font-size: smaller;
+    }
+    .suggestions
+   {
+      padding: 1% 1% 1% 1%; 
+   }
+  }
+
+</style>
+<script>
+     const test = <%- JSON.stringify(question) %>;
+     const questions = [];
+     questions.push(...test);
+    
+  
+   function findMatches(wordMatch , questions)
+   {
+     return questions.filter(question=>{
+       const regex = RegExp(wordMatch,'gi');
+       return question.tag.match(regex) || question.heading.match(regex) ||
+        question.theory.match(regex);
+     });
+   }
+   function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+  function displayMatches()
+  {
+    const matchArray = findMatches(this.value, questions);
+    console.log(matchArray);
+    const html = matchArray.map(question=>{
+      const regex=new RegExp(this.value,'gi');
+      const tags=question.tag.replace(regex,`<span class="hl">${this.value}</span>`);
+      const explanationName=question.theory.replace(regex,`<span class="hl">${this.value}</span>`);
+      const headingName=question.heading.replace(regex,`<span class="hl">${this.value}</span>`);
+      return `
+       
+   
+    <div class="search-output">
+        <h3> ${tags} </h3>
+        <h5>  ${numberWithCommas(headingName)} </h5>
+        <p> ${explanationName} </p>
+        
+    </div>
+      <hr>
+      `;
+    }).join('');
+    suggestions.innerHTML=html;
+  }
+ 
+
+  const searchInput = document.querySelector('.search');
+  const suggestions = document.querySelector('.suggestions');
+
+  searchInput.addEventListener('change',displayMatches);
+  searchInput.addEventListener('keyup',displayMatches);
+
+
+</script>

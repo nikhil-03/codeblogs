@@ -24,6 +24,11 @@ router.get("/",(req,res,next)=>{
     })
 
 })
+router.get("/alltopics",(req,res,next)=>{
+    Theory.find({},function(err,question){
+        res.render("topic-search-main",{question:question});
+})
+})
 
 router.get("/upload",(req,res,next)=>{
     if(req.isAuthenticated())

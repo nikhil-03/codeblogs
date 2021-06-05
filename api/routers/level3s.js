@@ -32,8 +32,8 @@ router.get("/",(req,res,next)=>{
 })
 router.get("/allquestions",(req,res,next)=>{
     questions.find({},function(err,question){
-        res.render("temp",{question:question});
-    })
+        res.render("question-search-main",{question:question});
+})
 })
 router.get("/upload",(req,res,next)=>{
     res.render("writequestion")

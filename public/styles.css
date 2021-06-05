@@ -403,3 +403,57 @@ li:hover
       font-family: 'Montserrat', sans-serif;
       text-align: center;
   }
+
+  /*///////////////////////////////////////////////////////////*/
+.quick-link
+{
+    font-family: 'Montserrat', sans-serif; text-align: center;
+}  
+.quicklink
+{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+}  
+.quicklink-1
+{
+    background-color: #bf1363;  
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+}  
+.quicklink-2
+{
+    background-color: #f54748;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+}  
+
+.qlist
+{
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.qlist-1
+{
+   background-color: #3a6351 ;
+   border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+}
+.qlist-2
+{
+    background-color: #007580;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+}
+.qlist-3
+{
+    background-color: #fea82f;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+}
