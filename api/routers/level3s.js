@@ -194,4 +194,20 @@ router.post("/search-item-name",(req,res)=>{
 })
 
 
+router.get("/wes-search/:id",(req,res,next)=>{
+    console.log(req.params.id);
+    Question.find({_id:req.params.id}).exec((err,found)=>{
+        if(err)
+           {
+               console.log(err);
+               res.redirect("/");
+           }
+           else 
+           {
+               console.log(found);
+               res.render("search-question",{ found:found });
+           }
+    })
+})
+
 module.exports=router;
