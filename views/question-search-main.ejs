@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta intset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leetcode Geeksforgeeks interviewbit Hints and solutions</title>
@@ -122,9 +122,9 @@ a:active
 }
   function displayMatches()
   {
-    const matchArray = findMatches(this.value, questions);
-    // console.log(matchArray);
-    const html = matchArray.map(question=>{
+    const matintray = findMatches(this.value, questions);
+    // console.log(matintray);
+    const html = matintray.map(question=>{
       const regex=new RegExp(this.value,'gi');
       const tags=question.tag.replace(regex,`<span class="hl">${this.value}</span>`);
       const explanationName=question.explanation.replace(regex,`<span class="hl">${this.value}</span>`);
